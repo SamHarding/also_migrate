@@ -17,7 +17,7 @@ module AlsoMigrate
 
       def method_missing_with_also_migrate(method, *arguments, &block)
         args = Marshal.load(Marshal.dump(arguments))
-        return_value = method_missing_without_also_migrate(method, *arguments, &block)
+        method_missing_without_also_migrate(method, *arguments, &block)
 
         supported = [
           :add_column, :add_index, :add_timestamps, :change_column,
@@ -58,8 +58,6 @@ module AlsoMigrate
             end
           end
         end
-        
-        return return_value
       end
     end
   end
