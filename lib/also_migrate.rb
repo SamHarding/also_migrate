@@ -13,3 +13,5 @@ end
 
 ActiveRecord::Migrator.send(:include, AlsoMigrate::Migrator)
 ActiveRecord::Migration.send(:include, AlsoMigrate::Migration)
+
+#Sam Comment

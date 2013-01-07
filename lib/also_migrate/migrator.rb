@@ -1,5 +1,3 @@
-#Sam Version also_migrate
-
 module AlsoMigrate
   module Migrator
     
