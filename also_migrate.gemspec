@@ -7,7 +7,7 @@ require 'also_migrate/gems'
 Gem::Specification.new do |s|
   AlsoMigrate::Gems.gemspec.hash.each do |key, value|
     if key == 'name' && AlsoMigrate::Gems.gemset != :default
-      s.name = "#{value}-#{AlsoMigrate::Gems.gemset}"
+      s.name = "#{value}#{AlsoMigrate::Gems.gemset}"
     elsif key == 'summary' && AlsoMigrate::Gems.gemset == :solo
       s.summary = value + " (no dependencies)"
     elsif !%w(dependencies development_dependencies).include?(key)
